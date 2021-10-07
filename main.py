@@ -1,4 +1,4 @@
-from fleet import Fleet 
+from battlefield import Battlefield 
 
-
-print(Fleet)
+battlefield = Battlefield()
+battlefield.run_game()

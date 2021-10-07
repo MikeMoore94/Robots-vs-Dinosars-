@@ -34,7 +34,7 @@ class Battlefield:
             self.herd.dinosaurs.remove(self.fleet.robot[chosen_robot])
 
 
-    def robot_turn(self):
+    def robo_turn(self):
         print("Chosoe the Robot you want to send into battle")
         self.show_robot_options()
         chosen_robot = int(input())

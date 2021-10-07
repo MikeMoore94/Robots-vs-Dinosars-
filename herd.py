@@ -14,8 +14,8 @@ class Herd:
         self.dinosaurs.append(trex)
         self.dinosaurs.append(raptor)
         self.dinosaurs.append(triceratops)
+    
 
-        
 
     
 

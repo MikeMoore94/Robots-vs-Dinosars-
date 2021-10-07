@@ -18,8 +18,9 @@ class Battlefield:
 
     def battle(self):
         while len(self.herd.dinosaurs) > 0 and len(self.fleet.robot) > 0:
-            self.show.dino_options()
-            self.show.robot_option()
+            self.dino_turn()
+            if len(self.fleet.robot) > 0:
+                self.robo_turn()
 
     def dino_turn(self):
         print("Choose the Dinosaur you want send into battle")
@@ -31,7 +32,7 @@ class Battlefield:
         self.herd.dinosaurs[chosen_dino].attack(self.fleet.robot[chosen_robot])
         if self.fleet.robot[chosen_robot].health <= 0:
             print(f"{self.herd.dinosaurs[chosen_dino]} has fallen")
-            self.herd.dinosaurs.remove(self.fleet.robot[chosen_robot])
+            self.fleet.robot.remove(self.fleet.robot[chosen_robot])
 
 
     def robo_turn(self):
@@ -44,7 +45,7 @@ class Battlefield:
         self.fleet.robot[chosen_robot].attack(self.herd.dinosaurs[chosen_dino])
         if self.herd.dinosaurs[chosen_dino].health <= 0: 
             print(f"{self.fleet.robot[chosen_robot]} has fallen")
-            self.fleet.robot.remove(self.herd.dinosaurs[chosen_dino])
+            self.herd.dinosaurs.remove(self.herd.dinosaurs[chosen_dino])
 
 
     def show_dino_options(self):
